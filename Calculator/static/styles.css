@@ -1,0 +1,12 @@
+body {
+    background-color: aquamarine;
+}
+
+body, option {
+    text-align: center;
+}
+
+.padding {
+    padding: 10px;
+}
+
