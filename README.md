@@ -1,2 +1,2 @@
 # JavaScript
-JavaScript Projects
+This is a collection of JavaScript Projects
