@@ -1,3 +1,17 @@
 ## Snake Game with JavaScript
-- Done using Javascript and HTML canvas
-- Played using arrow keys
+### Features:
+- **HTML Canvas**
+- **Keyboard Inputs (arrow keys)**
+- **Collision Detection**
+  - Wall Collision
+  - Self Collision
+  - Apple Collision
+- **Increasing Difficult**
+  - Gets faster as score increases
+- **Audio**
+  - Apple Collision Sound
+- **Add Text**
+  - Score Display
+  - Game Over Display
+- **Play Again**
+  - Start a new game
