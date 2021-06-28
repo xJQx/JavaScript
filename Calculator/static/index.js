@@ -24,7 +24,7 @@ function Calculate() {
     }
 
     // check for numbers
-    if (typeof(n1) !== 'number' || typeof(n2) !== 'number')
+    if (isNaN(n1) || isNaN(n2))
     {
         check = false;
     }
