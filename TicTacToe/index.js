@@ -29,16 +29,93 @@ for (let i = 0; i < 2; i++)
     
 }
 
-// add event listener for clicks (when a player makes a move)
-document.addEventListener('keydown', event => {
-    number = event.keyCode;
-    // keycode from 49 - 57
-    for (let i = 49; i < 58; i++)
-    {
-        if (event.keyCode === i)
+// player move
+function playerMove() {
+    // event listener for pressing a key
+    document.addEventListener('keydown', event => {
+        number = event.keyCode;
+        // keycode from 49 - 57
+        for (let i = 49; i < 58; i++)
         {
-            let number = i - 48;
+            if (event.keyCode === i)
+            {
+                let number = i - 48;
+    
+                //player 1
+                if (playerColor == 'orange')
+                {
+                    // color box
+                    if (!colorBox(number, playerColor))
+                    {
+                        return console.log('fail');
+                    }
+                    
+                    // draw symbol in board
+                    drawSymbol(number);
+                    
+                    symbolCount++;
+    
+                    // check player 1 win
+                    if (winConditions('orange'))
+                    {
+                        console.log("player 1 wins");
+                        printWinner('player 1');
+                        document.addEventListener('keydown', function () {
+                            this.location.reload();
+                        });
+                        break;
+                    }
+                    isTie();
+                    if (player2 == true) {
+                        playerColor = 'blue';
+                    }
+                }
+    
+                // AI
+                if (player2 == false)
+                {
+                    if (symbolCount < 9) {
+                        AI();
+                    }
+                }
+                else if (player2 == true && playerColor == 'blue')
+                {
+                    // color box
+                    if (!colorBox(number, playerColor))
+                    {
+                        return console.log('fail');
+                    }
+                    
+                    // draw cross symbol in board
+                    drawCross(number);
+                    
+                    symbolCount++;
+                    playerColor = 'orange';
+                }
+                
+                // check player 2 win
+                if (winConditions('blue'))
+                {
+                    console.log("player 2 wins");
+                    printWinner('player 2');
+                    document.addEventListener('keydown', function () {
+                        this.location.reload();
+                    });
+                    break;
+                }
+                if (symbolCount % 2 == 0)
+                {
+                    document.querySelector('#warning').style.display = 'none';
+                }
+            }
+        }
+    });
 
+    // event listener for pressing mini box (table)
+    document.querySelectorAll('td').forEach((td) => {
+        td.onclick = () => {
+            let number = parseInt(td.id.replace('n', ''));
+            
             //player 1
             if (playerColor == 'orange')
             {
@@ -61,7 +138,12 @@ document.addEventListener('keydown', event => {
                     document.addEventListener('keydown', function () {
                         this.location.reload();
                     });
-                    break;
+                    document.querySelectorAll('td').forEach((td2) => {
+                        td2.onclick = () => {
+                            this.location.reload();
+                        }
+                    });
+                    return;
                 }
                 isTie();
                 if (player2 == true) {
@@ -99,15 +181,21 @@ document.addEventListener('keydown', event => {
                 document.addEventListener('keydown', function () {
                     this.location.reload();
                 });
-                break;
+                document.querySelectorAll('td').forEach((td2) => {
+                    td2.onclick = () => {
+                        this.location.reload();
+                    }
+                });
+                return;
             }
             if (symbolCount % 2 == 0)
             {
                 document.querySelector('#warning').style.display = 'none';
             }
         }
-    }
-});
+    })
+}
+playerMove();
 
 // color mini box
 function colorBox(number, color) {
@@ -305,8 +393,8 @@ function winConditions(color) {
 
 // print winner
 function printWinner(player) {
-    ctx.fillStyle = 'white';
-    ctx.fillRect(canvas.width / 6, canvas.height / 2 - 50, 320, 90);
+    ctx.fillStyle = 'black';
+    ctx.fillRect(canvas.width / 6 - 20, canvas.height / 2 - 80, 400, 155);
 
     ctx.font = '50px Verdena';
 
@@ -316,7 +404,7 @@ function printWinner(player) {
     gradient.addColorStop('1.0', 'red');
     ctx.fillStyle = gradient;
 
-    ctx.fillText(`${player} wins!`, canvas.width / 5, canvas.height / 2)
+    ctx.fillText(`${player.toUpperCase()} WINS!`, canvas.width / 5 - 25, canvas.height / 2 + 10)
 }
 
 // game tie
@@ -324,8 +412,8 @@ function isTie()
 {
     if (symbolCount == 9)
     {
-        ctx.fillStyle = 'white';
-        ctx.fillRect(6 * tileCount, canvas.height / 2 - 50, 100, 60);
+        ctx.fillStyle = 'black';
+        ctx.fillRect(6 * tileCount, canvas.height / 2 - 80, 150, 155);
 
         ctx.font = '50px Verdena';
 
@@ -335,12 +423,22 @@ function isTie()
         gradient.addColorStop('1.0', 'red');
         ctx.fillStyle = gradient;
 
-        ctx.fillText(`Tie!`, 6 * tileCount + 10, canvas.height / 2);
+        ctx.fillText(`TIE!`, 6 * tileCount + 25, canvas.height / 2 + 10);
+
+        // event listeners for reseting board
+        document.addEventListener('keydown', function () {
+            this.location.reload();
+        });
+        document.querySelectorAll('td').forEach((td) => {
+            td.onclick = () => {
+                this.location.reload();
+            }
+        });
     }
 }
 
 // buttons for choosing ai or 2 players mode
-{
+function gameMode() {
     button1 = document.querySelector('#player2');
     button2 = document.querySelector('#ai');
 
@@ -363,6 +461,7 @@ function isTie()
         }
     }
 }
+gameMode();
 
 // warning alert
 function closeWarning() {

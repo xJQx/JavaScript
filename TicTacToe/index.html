@@ -26,6 +26,11 @@
                 margin-left: auto;
                 margin-right: auto;
                 background-color: white;
+                cursor: pointer;
+            }
+            td:hover {
+                background-color: black;
+                color: white;
             }
         </style>
     </head>
@@ -41,8 +46,7 @@
                 <button id="player2" class="btn btn-outline-primary btn-sm">2 Players</button>
                 <button id="ai" class="btn btn-primary btn-sm">AI</button>
                 <div id="warning" class="alert alert-warning alert-danger fade show" style="display: none;" role="alert">
-                
-                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    <strong>Both players both complete their move!</strong>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick=closeWarning()></button>
                 </div>
             </div>
