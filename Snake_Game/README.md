@@ -1,18 +1,28 @@
-## Snake Game with JavaScript
+# Snake Game
+
+<b>Play your favorite childhood Snake Game! 🐍</b>
+
+![JavaScript](https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat-square&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A)
+![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
+![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
+
 ## <a href="https://xjqx.github.io/JavaScript/Snake_Game/">Website</a>
-### Features:
-- **HTML Canvas**
-- **Keyboard Inputs (arrow keys)**
-- **Collision Detection**
+
+<img src="snake-game.gif" alt="snake-game.gif" width=500 />
+
+## Features:
+- **`HTML Canvas`**
+- **`Keyboard Inputs (arrow keys)`**
+- **`Collision Detection`**
   - Wall Collision
   - Self Collision
   - Apple Collision
-- **Increasing Difficult**
+- **`Increasing Difficult`**
   - Gets faster as score increases
-- **Audio**
+- **`Audio`**
   - Apple Collision Sound
-- **Add Text**
+- **`Add Text`**
   - Score Display
   - Game Over Display
-- **Play Again**
+- **`Play Again`**
   - Start a new game
