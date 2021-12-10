@@ -22,3 +22,6 @@ nav {
 .text-font-family {
     font-family: 'Montserrat', sans-serif;;
 }
+.pointer-cursor {
+    cursor: pointer;
+}
