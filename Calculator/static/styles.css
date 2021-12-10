@@ -1,8 +1,8 @@
-body {
-    background-color: aquamarine;
+#body {
+    background-color: white;
 }
 
-body, option {
+#body, option {
     text-align: center;
 }
 

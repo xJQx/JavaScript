@@ -9,39 +9,49 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="static/index.js"></script>
         <link href="static/styles.css" rel="stylesheet">
+        <link href="../index.css" rel="stylesheet">
     </head>
-    <body id="body">
-        <h1 class="padding">Caculator</h1>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="nav-header" href="/index.html">
+                <img id= "icon" src="https://img.icons8.com/color/48/000000/javascript--v2.png" width=35/> 
+                JavaScript Projects
+            </a>
+        </nav>
+        <div id="body">
+            <h1 class="padding">Caculator</h1>
 
-        <div class="container">
-            <input id="n1" class="form-control" type="text" placeholder="Number">
-            <br>
+            <div class="container">
+                <input id="n1" class="form-control" type="text" placeholder="Number">
+                <br>
 
-            <div class="dropdown">
-                <select id="type" class="btn btn-lg btn-light dropdown-toggle" type="button">
-                    <option value="addition">+</option>
-                    <option value="substract">-</option>
-                    <option value="multiply">x</option>
-                    <option value="divide">÷</option>
-                </select>
-            </div>
-            <br>
+                <div class="dropdown">
+                    <select id="type" class="btn btn-lg btn-light dropdown-toggle" type="button">
+                        <option value="addition">+</option>
+                        <option value="substract">-</option>
+                        <option value="multiply">x</option>
+                        <option value="divide">÷</option>
+                    </select>
+                </div>
+                <br>
 
-            <input id="n2" class="form-control" type="text" placeholder="Number">
-            <br>
-            <div class="d-grid gap-2">
-                <button id="calculate" type="submit" class="btn btn-primary">Caculate</button>
-            </div>
+                <input id="n2" class="form-control" type="text" placeholder="Number">
+                <br>
+                <div class="d-grid gap-2">
+                    <button id="calculate" type="submit" class="btn btn-primary">Caculate</button>
+                </div>
 
-            <!-- for wrong inputs -->
-            <br>
-            <div id="wrong" class="alert alert-danger" role="alert" style="display:none;">
-                Please Fill in correctly!
-            </div>
+                <!-- for wrong inputs -->
+                <br>
+                <div id="wrong" class="alert alert-danger" role="alert" style="display:none;">
+                    Please Fill in correctly!
+                </div>
 
-            <!-- show result -->
-            <div id="result" class="alert alert-success" role="alert" style="display:none;">
+                <!-- show result -->
+                <div id="result" class="alert alert-success" role="alert" style="display:none;">
+                </div>
             </div>
         </div>
+        
     </body>
 </html>
