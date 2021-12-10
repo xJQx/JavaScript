@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+nav {
+    margin-bottom: 10px;
+}
 .nav-header {
     color: gold;
     text-decoration: none;
     width: 100%;
     display: flex;
     justify-content: center;
-    font-size: xx-large;
+    align-items: center;
+    font-size: x-large;
     font-family: 'Montserrat', sans-serif;
-    margin: 3px;
 }
 .nav-header:hover {
     color: rgba(248, 242, 157, 0.938);
 }
-#navbarToggleExternalContent {
-    color:gold;
+#icon {
+    margin-right: 5px;
 }
-
+.text-font-family {
+    font-family: 'Montserrat', sans-serif;;
+}
