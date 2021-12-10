@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.nav-header {
+    color: gold;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    font-family: 'Montserrat', sans-serif;
+    margin: 3px;
+}
+.nav-header:hover {
+    color: rgba(248, 242, 157, 0.938);
+}
+#navbarToggleExternalContent {
+    color:gold;
+}
+
