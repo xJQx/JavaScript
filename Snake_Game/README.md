@@ -6,7 +6,7 @@
 ![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
 
-## <a href="https://xjqx.github.io/JavaScript/Snake_Game/">Website</a>
+## <a href="https://xjqx.github.io/JavaScript-Projects/Snake_Game/">Website</a>
 
 <img src="snake-game.gif" alt="snake-game.gif" width=500 />
 
