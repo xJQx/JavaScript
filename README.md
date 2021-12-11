@@ -10,5 +10,5 @@
 ## 🌐 <a href="https://xjqx.github.io/JavaScript-Projects/">Main Website</a>
 
 🧮 <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/Calculator">Calculator</a><br>
-🐍 <a href="https://xjqx.github.io/JavaScript-Projects/Snake_Game/">Snake Game</a><br>
+🐍 <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/Snake_Game">Snake Game</a><br>
 ❌ <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/TicTacToe">Tic Tac Toe</a><br>
