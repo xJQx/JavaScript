@@ -7,8 +7,8 @@
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-%231572B6?style=flat-square&logo=bootstrap&logoColor=ffffff)
 
-## 🌐 <a href="https://xjqx.github.io/JavaScript/">Main Website</a>
+## 🌐 <a href="https://xjqx.github.io/JavaScript-Projects/">Main Website</a>
 
-🧮 <a href="https://github.com/xJQx/JavaScript/tree/main/Calculator">Calculator</a><br>
-🐍 <a href="https://github.com/xJQx/JavaScript/tree/main/Snake_Game">Snake Game</a><br>
-❌ <a href="https://github.com/xJQx/JavaScript/tree/main/TicTacToe">Tic Tac Toe</a><br>
+🧮 <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/Calculator">Calculator</a><br>
+🐍 <a href="https://xjqx.github.io/JavaScript-Projects/Snake_Game/">Snake Game</a><br>
+❌ <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/TicTacToe">Tic Tac Toe</a><br>
