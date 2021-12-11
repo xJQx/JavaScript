@@ -473,3 +473,9 @@ function closeWarning() {
 document.querySelector('#reset').onclick = () => {
     location.reload();
 }
+
+// game info
+const info = document.querySelector('#info');
+info.addEventListener("click", () => {
+    console.log('clicked');
+})
