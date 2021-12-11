@@ -33,6 +33,7 @@ nav {
 
 /* Styling for homepage */
 /* Styling for cards */
+/* card title */
 .card-title a {
     text-decoration: none;
     color: black;
@@ -42,6 +43,7 @@ nav {
     color: rgb(87, 80, 80);
     font-size: 21px;
 }
+/* card buttons */
 .btn-container {
     display: flex;
     flex-flow: row wrap;
@@ -50,13 +52,16 @@ nav {
     position: relative;
     bottom: 0;
 }
-.btn {
+.btn-2 {
     color: #000;
     margin-left: 12px;
     margin-bottom: 6px;
+    padding: 6px 12px;
+    box-sizing: border-box;
+    display: inline-block;
     text-align: center;
 }
-.btn::after, .btn::before {
+.btn-2::after, .btn-2::before {
     margin-left: 15px;
     margin-bottom: 6px;
     border: 3px solid black;
