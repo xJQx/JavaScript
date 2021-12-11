@@ -6,7 +6,7 @@
 ![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
 
-## <a href="https://xjqx.github.io/JavaScript/TicTacToe/">Website</a>
+## <a href="https://xjqx.github.io/JavaScript-Projects/TicTacToe/">Website</a>
 
 <img src="tic-tac-toe.gif" alt="tic-tac-toe.gif" width=500 />
 
