@@ -30,3 +30,48 @@ nav {
 .pointer-cursor {
     cursor: pointer;
 }
+
+/* Styling for homepage */
+/* Styling for cards */
+.card-title a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s;
+}
+.card-title a:hover {
+    color: rgb(87, 80, 80);
+    font-size: 21px;
+}
+.btn-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+.buttons {
+    position: relative;
+    bottom: 0;
+}
+.btn {
+    color: #000;
+    margin-left: 12px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+.btn::after, .btn::before {
+    margin-left: 15px;
+    margin-bottom: 6px;
+    border: 3px solid black;
+    content: "";
+    position: absolute;
+    width: calc(100% - 15px);
+    height: calc(100% - 6px);
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+.buttons a:hover::after {
+    transform: translate(-5px, -5px);
+}
+.buttons a:hover::before {
+    transform: translate(5px, 5px);
+}
