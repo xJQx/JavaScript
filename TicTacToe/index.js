@@ -5,9 +5,9 @@ const ctx = canvas.getContext('2d');
 // 9 of these boxes
 // 17 by 17 gameboard including 2 spaces for lines
 
-let tileCount = 30; // each tile should be 30 x 30
+let tileCount = 26; // each tile should be 30 x 30
 let tileSize = tileCount - 5;
-let SymbolSize = 30;
+let SymbolSize = 26;
 let symbolCount = 0;
 
 // default ai game
@@ -394,9 +394,9 @@ function winConditions(color) {
 // print winner
 function printWinner(player) {
     ctx.fillStyle = 'black';
-    ctx.fillRect(canvas.width / 6 - 20, canvas.height / 2 - 80, 400, 155);
+    ctx.fillRect(canvas.width / 9 - 30, canvas.height / 2 - 80, 400, 155);
 
-    ctx.font = '50px Verdena';
+    ctx.font = '40px Verdena';
 
     var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0)
     gradient.addColorStop('0', 'magenta');
@@ -413,7 +413,7 @@ function isTie()
     if (symbolCount == 9)
     {
         ctx.fillStyle = 'black';
-        ctx.fillRect(6 * tileCount, canvas.height / 2 - 80, 150, 155);
+        ctx.fillRect(6 * tileCount, canvas.height / 2 - 80, 130, 155);
 
         ctx.font = '50px Verdena';
 
@@ -423,7 +423,7 @@ function isTie()
         gradient.addColorStop('1.0', 'red');
         ctx.fillStyle = gradient;
 
-        ctx.fillText(`TIE!`, 6 * tileCount + 25, canvas.height / 2 + 10);
+        ctx.fillText(`TIE!`, 6 * tileCount + 10, canvas.height / 2 + 10);
 
         // event listeners for reseting board
         document.addEventListener('keydown', function () {

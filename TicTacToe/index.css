@@ -1,0 +1,44 @@
+#header {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#info {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    align-self: center;
+    transition: all 0.2s;
+}
+#info:hover {
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+}
+canvas {
+    box-shadow: black 10px 20px 50px;
+    background-color: black;
+    margin-bottom: 15px;
+}
+table, td {
+    border: black 1px solid;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+td:hover {
+    background-color: black;
+    color: white;
+}
