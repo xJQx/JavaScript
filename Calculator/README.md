@@ -7,6 +7,6 @@
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
 ![Bootstrap](https://img.shields.io/badge/-Bootstrap-%231572B6?style=flat-square&logo=bootstrap&logoColor=ffffff)
 
-## <a href="https://xjqx.github.io/JavaScript/Calculator/">Website</a>
+## <a href="https://xjqx.github.io/JavaScript-Projects/Calculator/">Website</a>
 
 <img src="calculator.gif" alt="calculator.gif" width=500></img>
