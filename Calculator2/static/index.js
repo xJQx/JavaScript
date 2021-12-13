@@ -104,13 +104,14 @@ function calculateOutput() {
     }
 
     // check for negative signs
+    
 
-    let test = 1 / 2;
-    console.log(test);
-
-    if (isNaN(test) || test == Infinity || test == -Infinity) {
+    if (isNaN(formula) || formula == Infinity || formula == -Infinity) {
         handleSymbol("C");
         output.innerHTML += "ERROR";
+    } else {
+        handleSymbol("C");
+        output.innerHTML += formula;
     }
 
 }
