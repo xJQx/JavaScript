@@ -1,0 +1,42 @@
+#body {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: center;
+}
+#table {
+    border-collapse: separate;
+    border-spacing: 5px;
+    border: 2px solid grey;
+    padding: 5px;
+    box-shadow: 3px 3px 3px rgb(93, 91, 91);
+}
+
+/* Styling for individul buttons */
+.number, .symbol, #zero, #output{
+    display: inline-block;
+    border: 1px solid #000000;
+    margin: 3px;
+    width: 60px;
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+#output {
+    padding: 3px;
+    width: 271.5px;
+    height: 32px;
+    text-align: right;
+}
+#zero {
+    width: 130.5px;
+}
+.symbol {
+    background-color: pink;
+}
+.number:hover, .symbol:hover, #zero:hover, #output:hover {
+    color: rgb(74, 74, 199);
+    background-color: grey;
+    cursor: pointer;
+}
+

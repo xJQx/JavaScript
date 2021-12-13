@@ -2,9 +2,62 @@
 
 <html lang="en">
     <head>
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Caculator</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script src="static/index.js"></script>
+        <link href="static/styles.css" rel="stylesheet">
+        <link href="../index.css" rel="stylesheet">
     </head>
     <body>
-        
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="nav-header" href="../">
+                <img id= "icon" src="https://img.icons8.com/color/48/000000/javascript--v2.png" alt="JS-icon" /> 
+                JavaScript Projects
+            </a>
+        </nav>
+
+        <div id="body" class="text-font-family">
+            <div id="table">
+                <div id="tr">
+                    <div id="output"></div>
+                </div>
+                <div id="inputs">
+                    <div id="tr">
+                        <div id="td" class="symbol">C</div>
+                        <div id="td" class="symbol">+/-</div>
+                        <div id="td" class="symbol">Del</div>
+                        <div id="td" class="symbol">+</div>
+                    </div>
+                    <div id="tr">
+                        <div id="td" class="number">7</div>
+                        <div id="td" class="number">8</div>
+                        <div id="td" class="number">9</div>
+                        <div id="td" class="symbol">-</div>
+                    </div>
+                    <div id="tr">
+                        <div id="td" class="number">4</div>
+                        <div id="td" class="number">5</div>
+                        <div id="td" class="number">6</div>
+                        <div id="td" class="symbol">X</div>
+                    </div>
+                    <div id="tr">
+                        <div id="td" class="number">1</div>
+                        <div id="td" class="number">2</div>
+                        <div id="td" class="number">3</div>
+                        <div id="td" class="symbol">÷</div>
+                    </div>
+                    <div id="tr">
+                        <div id="zero" class="number">0</div>
+                        <div id="td" class="number">.</div>
+                        <div id="td" class="symbol">=</div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
     </body>
 </html>
