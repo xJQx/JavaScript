@@ -57,7 +57,6 @@ function handleSymbol(symbol) {
 function calculateOutput() {
     console.log("output calculated!");
     let formula = document.querySelector("#output").innerHTML;
-    let ans = 0;
     console.log(formula);
     
     // loop through the formula
@@ -65,33 +64,43 @@ function calculateOutput() {
     // first loop for multiplication and division
     for (let i = 0; i < formula.length; i++) {
         if (formula[i] === "x" || formula[i] === "/") {
-            let numBefore;
-            let numAfter;
-            
             // number before the sign
-            let j = i - 1;
-            for (; j >= 0; j--) {
-                if (formula[j] === "+" || formula[j] === "-") {
-                    break;
-                }
-            }
-            numBefore = formula.slice(j + 1, i);
+            let [numBefore, j] = getNumBefore(i, i, formula);
             console.log(numBefore);
 
             // number after the sign
-            let k = i + 1;
-            for (; k < formula.length; k++) {
-                if (formula[k] === "+" || formula[k] === "-") {
-                    break;
-                }
-            }
-            numAfter = formula.slice(i + 1, k);
+            let [numAfter, k] = getNumAfter(i, i, formula);
             console.log(numAfter);
+
+            // do calculation
+            formula = Calculate(i, j, k, formula);
+
+            console.log(formula);
+
+            // shift i position to the left as the formula is now changed
+            i = j + 1;
         }
     }
+
     // second loop for addition and substraction
     for (let i = 0; i < formula.length; i++) {
-        ;
+        if (formula[i] === "+" || formula[i] === "-") {
+            // number before the sign
+            let [numBefore, j] = getNumBefore(i, i, formula);
+            console.log(numBefore);
+
+            // number after the sign
+            let [numAfter, k] = getNumAfter(i, i, formula);
+            console.log(numAfter);
+
+            // do calculation
+            formula = Calculate(i, j, k, formula);
+            
+            console.log(formula);
+
+            // shift i position to the left as the formula is now changed
+            i = j + 1;
+        }
     }
 
     // check for negative signs
@@ -104,6 +113,51 @@ function calculateOutput() {
         output.innerHTML += "ERROR";
     }
 
+}
+
+// number before the sign
+function getNumBefore(i, j, formula) {
+    // number before the sign
+    j = i - 1;
+    for (; j >= 0; j--) {
+        if (formula[j] === "+" || formula[j] === "-" || formula[j] === "x" || formula[j] === "/") {
+            break;
+        }
+    }
+
+    let numBefore = formula.slice(j + 1, i);
+    return [numBefore, j];
+}
+// number after the sign
+function getNumAfter(i, k, formula) {
+    // number after the sign
+    k = i + 1;
+    for (; k < formula.length; k++) {
+        if (formula[k] === "+" || formula[k] === "-" || formula[k] === "x" || formula[k] === "/") {
+            break;
+        }
+    }
+
+    let numAfter = formula.slice(i + 1, k);
+    return [numAfter, k];
+}
+// calculate single operation
+function Calculate(i, j, k, formula) {
+    switch (formula[i]) {
+        case "+":
+            formula = formula.slice(0, j+1) + String(parseFloat(formula.slice(j+1, i)) + parseFloat(formula.slice(i+1, k))) + formula.slice(k);
+            break;
+        case "-":
+            formula = formula.slice(0, j+1) + String(parseFloat(formula.slice(j+1, i)) - parseFloat(formula.slice(i+1, k))) + formula.slice(k);
+            break;
+        case "x":
+            formula = formula.slice(0, j+1) + String(formula.slice(j+1, i) * formula.slice(i+1, k)) + formula.slice(k);
+            break;
+        case "/":
+            formula = formula.slice(0, j+1) + String(formula.slice(j+1, i) / formula.slice(i+1, k)) + formula.slice(k);
+            break;
+    }
+    return formula;
 }
 
 handleInput();
