@@ -3,6 +3,12 @@ const numbers = document.querySelectorAll(".number");
 const symbols = document.querySelectorAll(".symbol");
 let output = document.querySelector("#output");
 
+// local storage for keeping history
+// localHistory.setItem("count", 0);
+let localHistory = window.localStorage;
+let count = parseInt(localHistory.getItem("count"));
+localHistory.setItem("count", count);
+
 // when user click on an input
 function handleInput() {
     numbers.forEach((num) => {
@@ -27,9 +33,9 @@ function handleSymbol(symbol) {
         case "C":
             output.innerHTML = "";
             return;
-        case "sign":
-            symbol = "(-)";
-            break;
+        case "history":
+            getHistory();
+            return;
         case "Del":
             original = output.innerHTML;
             output.innerHTML = original.slice(0, original.length - 1);
@@ -58,6 +64,9 @@ function calculateOutput() {
     console.log("output calculated!");
     let formula = document.querySelector("#output").innerHTML;
     console.log(`formula: ${formula}`);
+
+    count += 1
+    localHistory.setItem(`formula${count}`, formula);
     
     // loop through the formula
     // handle order of x, /, +, -
@@ -67,12 +76,13 @@ function calculateOutput() {
     // second loop for addition and substraction
     formula = formulaLoop(formula, "+", "-");
 
-    // check for negative signs
-    
-
+    // error checking
     if (!errorCheck(formula)) {
         handleSymbol("C");
         output.innerHTML += formula;
+
+        localHistory.setItem("count", count);
+        localHistory.setItem(`his${count}`, formula);
     }
 }
 
@@ -150,6 +160,29 @@ function errorCheck(formula) {
         output.innerHTML += "ERROR";
         return true;
     }
+}
+
+// show history
+function getHistory() {
+    let listHistory = document.querySelector("#list-history");
+    listHistory.innerHTML = "";
+    
+    for (let i = 0; i < count; i++) {
+        listHistory.innerHTML += "<li>" + localHistory.getItem(`formula${i+1}`) 
+                                + " = "
+                                + localHistory.getItem(`his${i+1}`) 
+                                + "</li>";
+    }
+
+    // show or hide history
+    document.querySelector("#show-history").setAttribute("style", "display: inline-block");
+    hideHistory();
+}
+// hide history
+function hideHistory() {
+    document.querySelector("#hide-history").addEventListener("click", () => {
+        document.querySelector("#show-history").setAttribute("style", "display: none");
+    })
 }
 
 handleInput();

@@ -40,3 +40,24 @@
     cursor: pointer;
 }
 
+
+/* show or hide history */
+#show-history {
+    display: none;
+}
+#hide-history {
+    color: black;
+    background-color: pink;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 1px solid pink;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+#hide-history:hover {
+    color: black;
+    background-color: rgb(238, 150, 165);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
