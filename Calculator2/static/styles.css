@@ -34,11 +34,22 @@
 .symbol {
     background-color: pink;
 }
-.number:hover, .symbol:hover, #zero:hover, #output:hover {
-    color: rgb(74, 74, 199);
-    background-color: grey;
+.symbol:hover {
+    color: rgb(75, 72, 72);
+    background-color: rgb(238, 150, 165);
     cursor: pointer;
 }
+.number:hover, #zero:hover {
+    color: rgb(75, 72, 72);
+    background-color: #84DFFF;
+    cursor: pointer;
+}
+#output:hover {
+    background-color: #EAEAEA;
+    color: #160040;
+    cursor: pointer;
+}
+
 
 
 /* show or hide history */
