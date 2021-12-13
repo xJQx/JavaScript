@@ -5,9 +5,9 @@ let output = document.querySelector("#output");
 
 // local storage for keeping history
 // localHistory.setItem("count", 0);
-let localHistory = window.localStorage;
+let localHistory = window.sessionStorage;
+localHistory.setItem("count", 0);
 let count = parseInt(localHistory.getItem("count"));
-localHistory.setItem("count", count);
 
 // when user click on an input
 function handleInput() {
@@ -166,7 +166,7 @@ function errorCheck(formula) {
 function getHistory() {
     let listHistory = document.querySelector("#list-history");
     listHistory.innerHTML = "";
-    
+
     for (let i = 0; i < count; i++) {
         listHistory.innerHTML += "<li>" + localHistory.getItem(`formula${i+1}`) 
                                 + " = "
