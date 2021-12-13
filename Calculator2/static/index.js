@@ -57,65 +57,48 @@ function handleSymbol(symbol) {
 function calculateOutput() {
     console.log("output calculated!");
     let formula = document.querySelector("#output").innerHTML;
-    console.log(formula);
+    console.log(`formula: ${formula}`);
     
     // loop through the formula
     // handle order of x, /, +, -
     // first loop for multiplication and division
-    for (let i = 0; i < formula.length; i++) {
-        if (formula[i] === "x" || formula[i] === "/") {
-            // number before the sign
-            let [numBefore, j] = getNumBefore(i, i, formula);
-            console.log(numBefore);
-
-            // number after the sign
-            let [numAfter, k] = getNumAfter(i, i, formula);
-            console.log(numAfter);
-
-            // do calculation
-            formula = Calculate(i, j, k, formula);
-
-            console.log(formula);
-
-            // shift i position to the left as the formula is now changed
-            i = j + 1;
-        }
-    }
+    formula = formulaLoop(formula, "x", "/");
 
     // second loop for addition and substraction
-    for (let i = 0; i < formula.length; i++) {
-        if (formula[i] === "+" || formula[i] === "-") {
-            // number before the sign
-            let [numBefore, j] = getNumBefore(i, i, formula);
-            console.log(numBefore);
-
-            // number after the sign
-            let [numAfter, k] = getNumAfter(i, i, formula);
-            console.log(numAfter);
-
-            // do calculation
-            formula = Calculate(i, j, k, formula);
-            
-            console.log(formula);
-
-            // shift i position to the left as the formula is now changed
-            i = j + 1;
-        }
-    }
+    formula = formulaLoop(formula, "+", "-");
 
     // check for negative signs
     
 
-    if (isNaN(formula) || formula == Infinity || formula == -Infinity) {
-        handleSymbol("C");
-        output.innerHTML += "ERROR";
-    } else {
+    if (!errorCheck(formula)) {
         handleSymbol("C");
         output.innerHTML += formula;
     }
-
 }
 
+// loop
+function formulaLoop(formula, symbol_1, symbol_2) {
+    for (let i = 0; i < formula.length; i++) {
+        if (formula[i] === symbol_1 || formula[i] === symbol_2) {
+            // number before the sign
+            let [numBefore, j] = getNumBefore(i, i, formula);
+            console.log(`number before: ${numBefore}`);
+
+            // number after the sign
+            let [numAfter, k] = getNumAfter(i, i, formula);
+            console.log(`number after: ${numAfter}`);
+
+            // do calculation
+            formula = singleOperation(i, j, k, formula);
+
+            console.log(`formula: ${formula}`);
+
+            // shift i position to the left as the formula is now changed
+            i = j + 1;
+        }
+    }
+    return formula;
+}
 // number before the sign
 function getNumBefore(i, j, formula) {
     // number before the sign
@@ -143,7 +126,7 @@ function getNumAfter(i, k, formula) {
     return [numAfter, k];
 }
 // calculate single operation
-function Calculate(i, j, k, formula) {
+function singleOperation(i, j, k, formula) {
     switch (formula[i]) {
         case "+":
             formula = formula.slice(0, j+1) + String(parseFloat(formula.slice(j+1, i)) + parseFloat(formula.slice(i+1, k))) + formula.slice(k);
@@ -159,6 +142,14 @@ function Calculate(i, j, k, formula) {
             break;
     }
     return formula;
+}
+// check for errors
+function errorCheck(formula) {
+    if (isNaN(formula) || formula == Infinity || formula == -Infinity) {
+        handleSymbol("C");
+        output.innerHTML += "ERROR";
+        return true;
+    }
 }
 
 handleInput();
