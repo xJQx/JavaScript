@@ -167,13 +167,13 @@ function showForecast(data) {
         let day = document.querySelector(`#f${i}`);
 
         // day inner HTML 
-        day.innerHTML = `<span>
-                            <span style="font-size: 25px;">${temp}</span>
-                            <span>F</span><br>
+        day.innerHTML = `<span class="forecast-degree-section">
+                            <span class="forecast-temp">${temp}</span>
+                            <span class="forecast-FC">F</span><br>
                         </span>
                         <span>${conditions}</span><br>
-                        <canvas style="margin-top: 3px;" id="c${i}" width=30 height=30></canvas>
-                        <span style="font-size: 15px; color: lightgrey; left-margin: 3px;">${datetime}</span>`
+                        <canvas class="forecast-canvas" id="c${i}" width=30 height=30></canvas>
+                        <span class="forecast-datetime">${datetime}</span>`
         
         // getting icon for forecast weather type
         setIcons(icon, document.querySelector(`#c${i}`));

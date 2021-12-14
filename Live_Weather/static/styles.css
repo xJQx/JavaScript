@@ -111,3 +111,37 @@
     margin-bottom: 50px;
     font-size: 20px;
 }
+.forecast-degree-section {
+    cursor: pointer;
+    transition: all 0.4s;
+}
+.forecast-temp {
+    font-size: 25px;
+}
+.forecast-FC {
+    color: white;
+    transition: all 0.4s;
+}
+.forecast-FC:hover {
+    padding-left: 2px;
+    color: blanchedalmond;
+}
+.forecast-canvas {
+    margin-top: 3px;
+    transition: all 0.4s;
+}
+.forecast-canvas:hover {
+    margin-top: 1px;
+    cursor: pointer;
+}
+.forecast-datetime {
+    font-size: 15px;
+    color: rgb(200, 197, 197);
+    margin-left: 3px;
+    padding-bottom: 0px;
+    transition: all 0.4s;
+}
+.forecast-datetime:hover {
+    cursor: pointer;
+    margin-left: 5px;
+}
