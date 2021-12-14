@@ -155,14 +155,18 @@ function showForecast(data) {
     forecastTimezone.innerHTML = data.timezone;
 
     for (let i = 1; i <= 5; i++) {
-        const { temp, conditions } = DAYS[i];
+        const { temp, conditions, icon } = DAYS[i];
         let day = document.querySelector(`#f${i}`);
         day.innerHTML = `<span>
                             <span style="font-size: 25px;">${temp}</span>
                             <span>F</span><br>
                         </span>
-                        <span>${conditions}</span>`;
+                        <span>${conditions}</span><br>
+                        <canvas id="c${i}" width=30 height=30></canvas>`
+                        + day.innerHTML;
         
+        setIcons(icon, document.querySelector(`#c${i}`));
     }
+    
 }
 
