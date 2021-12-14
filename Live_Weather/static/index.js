@@ -131,10 +131,16 @@ function forecastTemperature() {
 
 // clearing HTML
 function clearHTML () {
+    // clearing current
     CURRENT.forEach((div) => {
         div.textContent = "";
     });
-    
+    // clearing forecast
+    for (let i = 1; i <= 5; i++) {
+        document.querySelector(`#f${i}`).innerHTML = ""
+    }
+
+    // hiding div
     locationDiv.setAttribute("style", "display: none");
     temperatureSection.setAttribute("style", "display: none");
     weatherIcon.setAttribute("style", "display: none");
@@ -155,18 +161,17 @@ function showForecast(data) {
     forecastTimezone.innerHTML = data.timezone;
 
     for (let i = 1; i <= 5; i++) {
-        const { temp, conditions, icon } = DAYS[i];
+        const { temp, conditions, icon, datetime } = DAYS[i];
         let day = document.querySelector(`#f${i}`);
         day.innerHTML = `<span>
                             <span style="font-size: 25px;">${temp}</span>
                             <span>F</span><br>
                         </span>
                         <span>${conditions}</span><br>
-                        <canvas id="c${i}" width=30 height=30></canvas>`
-                        + day.innerHTML;
+                        <canvas style="margin-top: 3px;" id="c${i}" width=30 height=30></canvas>
+                        <span style="font-size: 15px; color: lightgrey; left-margin: 3px;">${datetime}</span>`
         
         setIcons(icon, document.querySelector(`#c${i}`));
     }
     
 }
-
