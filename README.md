@@ -1,6 +1,6 @@
 # JavaScript Projects
 
-<b>Collection of simple JavaScript Projects</b>
+<b>Collection of Mini JavaScript Projects</b>
 
 <img src="javascript-main-web.gif" alt="javascript-main-web.gif" width=500 />
 
