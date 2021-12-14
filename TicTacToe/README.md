@@ -20,4 +20,5 @@
   - Making a move will color a mini box and draw a symbol (circle/cross)
 - **`Display Winner/Tie`**
   - Check for win conditions
+
 - **`Reset Board`**
