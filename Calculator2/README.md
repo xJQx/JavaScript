@@ -20,6 +20,8 @@
 - **`History`**
   - **View** Calculation History
   - **Hide** Calculation History
+- **`Error Handling`**
+  - **Display Error** with invalid inputs
 
 - **`Buttons`**
   - **Responsive** Buttons
