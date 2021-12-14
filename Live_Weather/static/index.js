@@ -1,11 +1,25 @@
 const temperatureDescription = document.querySelector(".temperature-description");
 const temperatureDegree = document.querySelector(".temperature-degree");
+const locationDiv = document.querySelector(".location");
 const locationTimeZone = document.querySelector(".location-timezone");
 const temperatureSection = document.querySelector(".temperature-section");
 const temperatureSpan = document.querySelector(".temperature-section span");
+const weatherIcon = document.querySelector(".icon");
+const temperatureForecast = document.querySelector(".forecast-button");
+const forecastButton = document.querySelector(".btn-2");
+const forecastText = document.querySelector(".forecast");
+const forecastTimezone = document.querySelector(`#forecast-timezone`);
+
+const CURRENT = [temperatureDegree
+                ,temperatureDescription
+                ,locationTimeZone
+                ,weatherIcon
+                ,forecastTimezone];
 
 let long;
 let lat;
+
+let API_DATA;
 
 window.addEventListener('load', () => {
     // ask user for geolocation with popup
@@ -20,24 +34,44 @@ window.addEventListener('load', () => {
                     return response.json();
                 })
                 .then(data => {
-                    console.log(data);
-                    const { temp, conditions, icon } = data.currentConditions;
+                    API_DATA = data;
+                    [fehreheit, celsius] = showCurrent(API_DATA);
 
-                    // Set DOM Elements from the API
-                    updateHTML(temp, conditions, data.timezone);
+                    temperatureSection.addEventListener("click", () => {
+                        switchTemp(fehreheit, celsius);
+                    })
 
-                    // temperature in celsius
-                    let celsius = fahrenheitToCelsius(temp);
-
-                    // getting icon for current weather type
-                    setIcons(icon, document.querySelector(".icon"));
-
-                    // switch temp between F and C
-                    switchTemp(temp, celsius);
+                    // event listener for forecast button
+                    forecastButton.addEventListener("click", () => {
+                        forecastTemperature();
+                    });
                 })
         });
     }
 })
+
+// show current weather conditions
+function showCurrent(data) {
+    // hide forecast
+    forecastText.setAttribute("style", "display: none");
+    forecastTimezone.setAttribute("style", "display: none");
+
+    // api data
+    console.log(data);
+    const { temp, conditions, icon } = data.currentConditions;
+
+    // Set DOM Elements from the API
+    updateHTML(temp, conditions, data.timezone);
+
+    // temperature in celsius
+    let celsius = fahrenheitToCelsius(temp);
+
+    // getting icon for current weather type
+    setIcons(icon, document.querySelector(".icon"));
+
+    return [temp, celsius];
+}
+
 
 // updating html
 function updateHTML (temp, conditions, timezone) {
@@ -45,6 +79,10 @@ function updateHTML (temp, conditions, timezone) {
     temperatureDescription.textContent = conditions;
     locationTimeZone.textContent = timezone;
     temperatureSpan.textContent = "F";
+    
+    locationDiv.setAttribute("style", "display: block-inline");
+    weatherIcon.setAttribute("style", "display: block");
+    temperatureForecast.setAttribute("style", "display: block");
 }
 
 // getting icon for current weather type
@@ -57,18 +95,72 @@ function setIcons(icon, iconID) {
 
 // switch temp between F and C
 function switchTemp(fehreheit, celsius) {
-    temperatureSection.addEventListener("click", () => {
-        if (temperatureSpan.textContent === "F") {
-            temperatureSpan.textContent = "C";
-            temperatureDegree.textContent = celsius.toFixed(1);;
-        } else {
-            temperatureSpan.textContent = "F";
-            temperatureDegree.textContent = fehreheit;
-        }
-    })
+    if (temperatureSpan.textContent === "F") {
+        temperatureSpan.textContent = "C";
+        temperatureDegree.textContent = celsius.toFixed(1);;
+    } else {
+        temperatureSpan.textContent = "F";
+        temperatureDegree.textContent = fehreheit;
+    }
 }
+
 
 // convert temp from fahrenheit to celsius
 function fahrenheitToCelsius(temp) {
     return (temp - 32) * (5 / 9);
 }
+
+// forecast temperature
+function forecastTemperature() {
+    // forecast and current button
+    if (forecastButton.innerHTML == "forecast") {
+        // console.log("forecast");
+        // show forecast and change button name
+        showForecast(API_DATA);
+        forecastButton.innerHTML = "current";
+
+    } else {
+        // console.log("current");
+        // show current weather conditions and change name
+        showCurrent(API_DATA);
+        forecastButton.innerHTML = "forecast";
+    }
+    
+}
+
+// clearing HTML
+function clearHTML () {
+    CURRENT.forEach((div) => {
+        div.textContent = "";
+    });
+    
+    locationDiv.setAttribute("style", "display: none");
+    weatherIcon.setAttribute("style", "display: none");
+    forecastTimezone.setAttribute("style", "display: none");
+}
+
+function showForecast(data) {
+    // show forecast
+    clearHTML();
+
+    forecastText.setAttribute("style", "display: flex");
+    forecastTimezone.setAttribute("style", "display: block");
+    
+
+    const DAYS = data.days;
+    console.log(DAYS);
+    
+    forecastTimezone.innerHTML = data.timezone;
+
+    for (let i = 1; i <= 5; i++) {
+        const { temp, conditions } = DAYS[i];
+        let day = document.querySelector(`#f${i}`);
+        day.innerHTML = `<span>
+                            <span style="font-size: 25px;">${temp}</span>
+                            <span>F</span><br>
+                        </span>
+                        <span>${conditions}</span>`;
+        
+    }
+}
+

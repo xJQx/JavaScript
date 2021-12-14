@@ -39,4 +39,76 @@
 }
 .icon {
     margin-left: 40px;
+    width: 128px;
+    height: 128px;
+    transition: all 0.4s;
+}
+.icon:hover {
+    margin-left: 33px;
+    width: 135px;
+    height: 135px;
+    cursor: pointer;
+}
+
+/* Button 2 */
+.forecast-button {
+    display: none;
+}
+.btn-2-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.btn-2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
+    width: 110px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+
+    
+    opacity: 0.5;
+}
+.btn-2:hover, .btn-2:focus, .btn-2:active {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    color: rgba(255, 255, 255);
+
+    opacity: 0.8;
+}
+
+/* Showing forecast */
+#forecast-timezone {
+    display: none;
+    position: relative;
+    top: 0;
+    margin-top: 80px;
+    font-size: 30px;
+}
+.forecast {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: relative;
+    top: 0;
+    margin-top: 160px;
+    
+}
+.forecast div {
+    margin-right: 50px;
+    margin-bottom: 50px;
+    font-size: 20px;
 }
