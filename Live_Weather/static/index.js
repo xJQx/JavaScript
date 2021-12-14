@@ -80,6 +80,7 @@ function updateHTML (temp, conditions, timezone) {
     locationTimeZone.textContent = timezone;
     temperatureSpan.textContent = "F";
     
+    temperatureSection.setAttribute("style", "display: block");
     locationDiv.setAttribute("style", "display: block-inline");
     weatherIcon.setAttribute("style", "display: block");
     temperatureForecast.setAttribute("style", "display: block");
@@ -135,6 +136,7 @@ function clearHTML () {
     });
     
     locationDiv.setAttribute("style", "display: none");
+    temperatureSection.setAttribute("style", "display: none");
     weatherIcon.setAttribute("style", "display: none");
     forecastTimezone.setAttribute("style", "display: none");
 }
