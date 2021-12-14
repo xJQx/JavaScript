@@ -9,3 +9,17 @@
 ## <a href="https://xjqx.github.io/JavaScript-Projects/Calculator2/">Website</a>
 
 <img src="calculator2.gif" alt="calculator.gif" width=500></img>
+
+## Features:
+- **`Mathematical Operations`**
+  - **Follows rules** of mathematical operations
+- **`C`**
+  - **Clear** Current Calculator Display
+- **`Del`**
+  - **Delete** the lastest number or symbol inputted
+- **`History`**
+  - **View** Calculation History
+  - **Hide** Calculation History
+
+- **`Buttons`**
+  - **Responsive** Buttons
