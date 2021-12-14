@@ -24,5 +24,6 @@
 - **`Add Text`**
   - Score Display
   - Game Over Display
+
 - **`Play Again`**
   - Start a new game
