@@ -8,7 +8,7 @@
 
 ## <a href="https://xjqx.github.io/JavaScript-Projects/TicTacToe/">Website</a>
 
-<img src="tic-tac-toe.gif" alt="tic-tac-toe.gif" width=500 />
+<img src="static/tic-tac-toe.gif" alt="tic-tac-toe.gif" width=500 />
 
 ## Features:
 - **`2 Modes:`**

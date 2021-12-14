@@ -9,4 +9,4 @@
 
 ## <a href="https://xjqx.github.io/JavaScript-Projects/Calculator/">Website</a>
 
-<img src="calculator.gif" alt="calculator.gif" width=500></img>
+<img src="static/calculator.gif" alt="calculator.gif" width=500></img>

@@ -8,7 +8,7 @@
 
 ## <a href="https://xjqx.github.io/JavaScript-Projects/Snake_Game/">Website</a>
 
-<img src="snake-game.gif" alt="snake-game.gif" width=500 />
+<img src="static/snake-game.gif" alt="snake-game.gif" width=500 />
 
 ## Features:
 - **`HTML Canvas`**

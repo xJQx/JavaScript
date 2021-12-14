@@ -8,7 +8,7 @@
 
 ## <a href="https://xjqx.github.io/JavaScript-Projects/Calculator2/">Website</a>
 
-<img src="calculator2.gif" alt="calculator.gif" width=500></img>
+<img src="static/calculator2.gif" alt="calculator.gif" width=500></img>
 
 ## Features:
 - **`Mathematical Operations`**
