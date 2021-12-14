@@ -105,7 +105,6 @@ function switchTemp(fehreheit, celsius) {
     }
 }
 
-
 // convert temp from fahrenheit to celsius
 function fahrenheitToCelsius(temp) {
     return (temp - 32) * (5 / 9);
@@ -147,22 +146,27 @@ function clearHTML () {
     forecastTimezone.setAttribute("style", "display: none");
 }
 
+// show forecast
 function showForecast(data) {
-    // show forecast
+    // clear HTML
     clearHTML();
 
+    // show forecast
     forecastText.setAttribute("style", "display: flex");
     forecastTimezone.setAttribute("style", "display: block");
-    
 
     const DAYS = data.days;
     console.log(DAYS);
     
+    // header for forecast section
     forecastTimezone.innerHTML = data.timezone;
 
+    // for each day (5 days)
     for (let i = 1; i <= 5; i++) {
         const { temp, conditions, icon, datetime } = DAYS[i];
         let day = document.querySelector(`#f${i}`);
+
+        // day inner HTML 
         day.innerHTML = `<span>
                             <span style="font-size: 25px;">${temp}</span>
                             <span>F</span><br>
@@ -171,6 +175,7 @@ function showForecast(data) {
                         <canvas style="margin-top: 3px;" id="c${i}" width=30 height=30></canvas>
                         <span style="font-size: 15px; color: lightgrey; left-margin: 3px;">${datetime}</span>`
         
+        // getting icon for forecast weather type
         setIcons(icon, document.querySelector(`#c${i}`));
     }
     
