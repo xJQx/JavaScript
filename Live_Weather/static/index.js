@@ -167,9 +167,9 @@ function showForecast(data) {
         let day = document.querySelector(`#f${i}`);
 
         // day inner HTML 
-        day.innerHTML = `<span class="forecast-degree-section">
-                            <span class="forecast-temp">${temp}</span>
-                            <span class="forecast-FC">F</span><br>
+        day.innerHTML = `<span class="forecast-degree-section" id="s${i}">
+                            <span class="forecast-temp" id="forecast-degree-${i}">${temp}</span>
+                            <span class="forecast-FC" id="forecast-temp-span-${i}">F</span><br>
                         </span>
                         <span>${conditions}</span><br>
                         <canvas class="forecast-canvas" id="c${i}" width=30 height=30></canvas>
@@ -177,6 +177,27 @@ function showForecast(data) {
         
         // getting icon for forecast weather type
         setIcons(icon, document.querySelector(`#c${i}`));
+
+        // temperature in celsius
+        let celsius = fahrenheitToCelsius(temp);
+
+        // add event listener for changing F -> C
+        const tempSpan = document.querySelector(`#forecast-temp-span-${i}`);
+        const tempDegree = document.querySelector(`#forecast-degree-${i}`);
+
+        document.querySelector(`#s${i}`).addEventListener("click", () => {
+            forecastSwitchTemp(tempSpan, tempDegree, temp, celsius);
+        })
     }
-    
+}
+
+// switch temp between F and C
+function forecastSwitchTemp(tempSpan, tempDegree, fehreheit, celsius) {
+    if (tempSpan.textContent === "F") {
+        tempSpan.textContent = "C";
+        tempDegree.textContent = celsius.toFixed(1);;
+    } else {
+        tempSpan.textContent = "F";
+        tempDegree.textContent = fehreheit;
+    }
 }
