@@ -8,7 +8,7 @@
 
 ## <a href="https://xjqx.github.io/JavaScript-Projects/Buttons/">Website</a>
 
-<img src="static/weather-forecast.gif" alt="buttons.gif" width=500></img>
+<img src="static/buttons.gif" alt="buttons.gif" width=500></img>
 
 ## Features:
 - **`Different Styles of Buttons`**
