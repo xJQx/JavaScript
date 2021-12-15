@@ -12,9 +12,12 @@
 
 ## Features:
 - **`Visual Crossing Weather API`**
+
 - **`Skycons Icons`**
+
 - **`Forecast`**
   - See weather 5 days into the future
+
 - **`Switch Temp Symbol`**
   - Switch between `F` and `C`
 
@@ -22,4 +25,6 @@
   - ***Loading*** Screen
   - ***Current*** Weather Condition Screen
   - ***Forecast*** Weather Condition Screen
-
+ 
+ - **`Mobile Responsive`**
+ 
