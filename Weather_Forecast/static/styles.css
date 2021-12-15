@@ -11,7 +11,9 @@
     background: linear-gradient(rgb(47,150,163), rgb(48,62,143));
     color: white;
 }
-
+body {
+    background-color: rgb(48,62,143);
+}
 .location, .temperature {
     height: 30vh;
     width: 50%;

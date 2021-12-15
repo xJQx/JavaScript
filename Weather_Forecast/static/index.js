@@ -21,8 +21,6 @@ let lat;
 
 let API_DATA;
 
-// mobile responsive
-document.querySelector("#body").setAttribute("style", `height: ${window.innerHeight}px`)
 
 window.addEventListener('load', () => {
     // ask user for geolocation with popup
