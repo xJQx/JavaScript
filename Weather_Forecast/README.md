@@ -8,7 +8,9 @@
 
 ## <a href="https://xjqx.github.io/JavaScript-Projects/Weather_Forecast/">Website</a>
 
+**`Desktop View / Mobile View`** <br><br>
 <img src="static/weather-forecast.gif" alt="weather-forecast.gif" width=500></img>
+<img src="static/weather-forecast-mobile.gif" alt="weather-forecast-mobile.gif" width=313></img>
 
 ## Features:
 - **`Visual Crossing Weather API`**
