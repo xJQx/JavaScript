@@ -172,9 +172,10 @@ function showForecast(data) {
                             <span class="forecast-temp" id="forecast-degree-${i}">${temp}</span>
                             <span class="forecast-FC" id="forecast-temp-span-${i}">F</span><br>
                         </span>
-                        <span>${conditions}</span><br>
+                        <span class="conditions">${conditions}</span><br>
                         <canvas class="forecast-canvas" id="c${i}" width=30 height=30></canvas>
-                        <span class="forecast-datetime">${datetime}</span>`
+                        <span class="forecast-datetime">${datetime}</span>
+                        <span id="condition${i}">${conditions}</span><br>`
         
         // getting icon for forecast weather type
         setIcons(icon, document.querySelector(`#c${i}`));

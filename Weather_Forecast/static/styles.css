@@ -147,3 +147,36 @@ body {
     cursor: pointer;
     margin-left: 5px;
 }
+#condition1, 
+#condition2, 
+#condition3, 
+#condition4, 
+#condition5 {
+    display: none;
+    font-size: 15px;
+}
+@media only screen and (max-width: 1100px) {
+    .forecast-degree-section {
+        display: none;
+    }
+    .conditions {
+        display: none;
+    }
+    .forecast {
+        flex-flow: row wrap;
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+    .forecast div {
+        margin: 10px 20px;
+    }
+    .forecast-datetime:hover + #condition1,
+    .forecast-datetime:hover + #condition2,
+    .forecast-datetime:hover + #condition3,
+    .forecast-datetime:hover + #condition4,
+    .forecast-datetime:hover + #condition5 {
+        display: block;
+        cursor: pointer;
+        position: absolute;
+    }
+  }
