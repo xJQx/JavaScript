@@ -1,7 +1,7 @@
 .btn-3-container {
     display: flex;
     flex-direction: column;
-    margin-top: 75px;
+    margin-top: 100px;
 }
 .btn-3 {
     background-color: #c2fbd7;
