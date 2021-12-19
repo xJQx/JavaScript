@@ -1,0 +1,78 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+.btn-4-container {
+  width: 100%;
+  height: 750px;
+  font-family: 'Open Sans Condensed', sans-serif;
+
+  /* Own styling */
+  padding: 0px 600px;
+  margin-top: 100px;
+}
+
+div[class*=box] {
+	height: 33.33%;
+	width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-4 { background-color: #3C3C3C; }
+
+.btn-4 {
+	line-height: 50px;
+	height: 50px;
+	text-align: center;
+	width: 250px;
+	cursor: pointer;
+}
+/* 
+========================
+      BUTTON Four
+========================
+*/
+.btn-4 {
+	color: #FFF;
+	transition: all 0.5s;
+	position: relative;	
+}
+.btn-4 span {
+	z-index: 2;	
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;	
+}
+.btn-4::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+.btn-4::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	transition: all 0.5s;
+	border: 1px solid rgba(255,255,255,0.2);
+	background-color: rgba(255,255,255,0.1);
+}
+.btn-4:hover::before {
+  transform: rotate(-45deg);
+  background-color: rgba(255,255,255,0);
+}
+.btn-4:hover::after {
+  transform: rotate(45deg);
+  background-color: rgba(255,255,255,0);
+}
