@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PathFinding Visualizer</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link href="index.css" rel="stylesheet">
+    </head>
+    <body class="container-fluid" style="padding: 20px;">
+        <h1>PathFinding Visualizer</h1>
+        <br>
+        <div id="buttons">
+            <div>
+                <button id='sample-board' class="button">Sample Board</button>
+                <button id='random-board' class="button">Random Board</button>
+                <button id="clear-board" class="button">Clear Board</button>
+                <button id='reset-board' class="button">Reset Board</button>
+            </div>
+            <div>
+                <button id='start-point' class="button">Starting Point</button>
+                <button id='goal-point' class="button">Goal</button>
+                <button id="modify-obstacle" class="button">Add/Remove Obstacle</button>
+            </div>
+            <div id="algorithms">
+            <button id='dijkstra' class="button">Dijkstra’s Algorithm</button>
+            <button id='greedy' class="button">Greedy Best First Search</button>
+            <button id='breadth' class="button">Breadth Best First Search</button>
+            <button id='astar' class="button">ASTAR</button>
+        </div>
+        </div>
+        <div id='sliders'>
+            <label for='speed'>Visualisation Speed:</label>
+            <input id='speed' type='range' min='0.1' max='10' step='0.1' value='0.1' class='slider'></input>
+        </div>
+        <br>
+        <div id='alert' class="alert alert-danger alert-dismissible fade show" role="alert" style='display: none;'>
+            <strong>No Path Available!</strong>
+            <button id='close' type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div id='alert2' class="alert alert-danger alert-dismissible fade show" role="alert" style='display: none;'>
+            <strong>No Start/Goal!</strong>
+            <button id='close2' type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div id="grids">
+            <table></table>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
