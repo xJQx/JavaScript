@@ -18,5 +18,5 @@
 🐍 <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/Snake_Game">Snake Game</a><br>
 ❌ <a href="https://github.com/xJQx/JavaScript-Projects/tree/main/TicTacToe">Tic Tac Toe</a><br>
 
-🐾 <a href="https://xjqx.github.io/PathFinding-Visualizer/">Pathfinding Algorithms Visualizer</a><br>
-📚 <a href="https://xjqx.github.io/Sorting-Visualizer/">Sorting Algorithms Visualizer</a><br>
+🐾 <a href="https://github.com/xJQx/PathFinding-Visualizer">Pathfinding Algorithms Visualizer</a><br>
+📚 <a href="https://github.com/xJQx/Sorting-Visualizer">Sorting Algorithms Visualizer</a><br>
